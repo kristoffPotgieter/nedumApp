@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 import numpy as np
-st.set_page_config(layout="wide") 
+# st.set_page_config(layout="wide") 
 st.title('Cape Town Urban Simulation Model')
 
 st.image('pictures/logo.png')
