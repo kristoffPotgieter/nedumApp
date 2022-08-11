@@ -1,0 +1,58 @@
+parameters,default value,description,format,category,type
+baseline_year,2011,Baseline year to be used in the simulations,numeric,Theoretical,user
+beta,0.25,Surplus housing elasticity in utility function,numeric,Theoretical,calibration
+q0,3.97,Basic need in housing (in m²) in utility function,numeric,Theoretical,calibration
+alpha,0.75,Composite good elasticity in utility function,numeric,Theoretical,calibration
+coeff_b,0.24,Capital elasticity in housing production function,numeric,Theoretical,calibration
+coeff_a,0.76,Land elasticity in housing production function,numeric,Theoretical,calibration
+coeff_A,0.03,Scale parameter in housing production function,numeric,Theoretical,calibration
+lambda,2.68,Gravity parameter in expected income (net of commuting costs) calculation,numeric,Theoretical,calibration
+job_center_threshold,2500,Number of jobs above which we retain a transport zone (TAZ) as an employment centre,numeric,Transport,user
+depreciation_rate,0.025,Depreciation rate of housing capital,numeric,Housing,user
+shack_size,14,Size (in m²) of an informal settlement dwelling unit,numeric,Housing,user
+RDP_size,40,Size (in m²) of the dwelling part in a RDP housing unit,numeric,Housing,user
+backyard_size,70,Size (in m²) of the backyard part in a RDP housing unit,numeric,Housing,user
+future_rate_public_housing,1000,Number of formal subsidized housing units built per year in future simulations,numeric,Policy,user
+informal_structure_value,3000,Cost of inputs (in rands) for building an informal dwelling unit,numeric,Housing,user
+fraction_z_dwellings,0.53,"Fraction of the composite good that is kept inside the house and that can possibly be destroyed by floods (food, furniture, etc.)",numeric,Housing,user
+subsidized_structure_value,127000,Cost of inputs (in rands) for building a formal subsidized dwelling unit,numeric,Housing,user
+max_land_use,0.7,Maximum share of a grid cell land area available for formal private housing that can actually be built ,numeric,Housing,user
+max_land_use_backyard,0.45,Maximum share of a grid cell land area available for informal backyard housing that can actually be built ,numeric,Housing,user
+max_land_use_settlement,0.4,Maximum share of a grid cell land area available for informal settlement housing that can actually be built ,numeric,Housing,user
+historic_radius,6,Length (in km) of the radius defining the historic town from the city centre,numeric,Policy,user
+limit_height_center,80,Maximum legal height (in m) for buildings in the historic town,numeric,Policy,user
+limit_height_out,10,Maximum legal height (in m) for buildings out of the historic town,numeric,Policy,user
+agricultural_rent_2011,807.2,Value (in rands) of the agricultural land price in 2011,numeric,Housing,user
+agricultural_rent_2001,70.7,Value (in rands) of the agricultural land price in 2001,numeric,Housing,user
+nb_of_income_classes,4,Number of income groups used in the model,numeric,Theoretical,user
+income_distribution,"[0, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 4]",List allocating each income group in the data (12) to one income group in the model (4),vector,Incomes,user
+household_size,"[1.14, 1.94, 1.92, 1.94]",List associating the average number of workers in a household (comprised of two individuals after taking unemployment into account) to each income group (from poorest to richest),vector,Theoretical,calib
+walking_speed,4,Speed (in km/h) at which representative households walk to work,numeric,Transport,user
+time_cost,1,Multiplier associating the value of time lost in commuting to foregone revenues,numeric,Transport,user
+time_invest_housing,3,Lag (in years) for formal private housing building in simulations,numeric,Housing,user
+time_depreciation_buildings,100,Time (in years) for the full depreciation of a formal private housing unit,numeric,Housing,user
+mini_lot_size,31.64,Minimum size (in m²) constraint for formal private housing units,numeric,Housing,user
+precalculated_amenities,/,Amenity index (real value from 0 to 1) in each grid cell,numeric,Theoretical,calibration
+income_class_by_housing_type,/,Multidimensional array of dummies setting income group eligibility to each housing type,vector,Theoretical,user
+income_centers_init,/,Value (in rands) of annual household income per income group and employment centre,vector,Incomes,calibration
+pockets,/,Disamenity index (real value from 0 to 1) for informal backyards in each grid cell,vector,Theoretical,calibration
+backyard_pockets,/,Disamenity index (real value from 0 to 1) for informal settlements in each grid cell,vector,Theoretical,calibration
+priceTrainPerKM,0.164,Variable cost (in rands) for 1km of train commuting,numeric,Transport,user
+priceTrainFixed,4.48,Fixed cost (in rands) for a one-way train trip,numeric,Transport,user
+priceBusPerKM,0.785,Variable cost (in rands) for 1km of bus commuting,numeric,Transport,user
+priceBusFixed,4.32,Fixed cost (in rands) for a one-way bus trip,numeric,Transport,user
+priceTaxiPerKM,0.522,Variable cost (in rands) for 1km of minibus/taxi commuting,numeric,Transport,user
+priceTaxiFixed,6.24,Fixed cost (in rands) for a one-way minibus/taxi trip,numeric,Transport,user
+priceFixedVehiculeMonth,400,Fixed cost (in rands) for one month of private car commuting,numeric,Transport,user
+agents_anticipate_floods,1,Dummy for having agents perfectly anticipate flood risks,categorical,Theoretical,options
+pluvial,1,Dummy for considering pluvial floods on top of fluvial,categorical,Theoretical,options
+correct_pluvial,1,Dummy for reducing pluvial risk for (better protected) formal structures,categorical,Theoretical,options
+coastal,1,Dummy for taking coastal floods into account (on top of fluvial floods),categorical,Theoretical,options
+dem,MERITDEM,Digital elevation model (DEM) to be used with coastal flood data (MERITDEM or NASADEM),categorical,Theoretical,options
+slr,1,Dummy for taking sea-level rise into account in coastal flood data,categorical,Theoretical,options
+informal_land_constrained,0,Dummy for forbidding new informal housing construction,categorical,Policy,options
+inc_ineq_scenario,2,Categorical variable to select scenario for income distribution (should be set to 1/2/3 for low/medium/high income inequality),categorical,Incomes,options
+pop_growth_scenario,3,Categorical variable to select scenario for total population (should be set to 1/2/3 for low/medium/high population growth),categorical,Macroeconomic,options
+fuel_price_scenario,2,Categorical variable to select scenario for fuel price (should be set to 1/2/3 for low/medium/high price growth),categorical,Transport,options
+inflation_scenario,2,Categorical variable to select scenario for inflation rate (should be set to 1/2/3 for low/medium/high growth rate),categorical,Macroeconomic,options
+interest_rate_scenario,2,Categorical variable to select scenario for interest rate (should be set to 1/2/3 for low/medium/high growth rate),categorical,Macroeconomic,options
