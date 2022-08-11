@@ -43,37 +43,37 @@ with helpTab:
         st.write('The Nedum model takes exogenous factors including the geographic, legal and infrastructure constrains of the city and models the responses of agents including Households, Firms and Developers.')
         st.image('pictures/modelChoices.png')
 
-    with st.expander('Inputs and Choices'):
-        st.write('### Inputs and Choices in the Nedum Model')
-        st.write("The Nedum model includes several parameters related to the ability of agents to respond to external forces, such as flood risk.")
-        # st.image('pictures/settlements.png')
+    # with st.expander('Inputs and Choices'):
+    #     st.write('### Inputs and Choices in the Nedum Model')
+    #     st.write("The Nedum model includes several parameters related to the ability of agents to respond to external forces, such as flood risk.")
+    #     # st.image('pictures/settlements.png')
 
 
 
 
-    with st.expander('Outputs and Insights'):
+    # with st.expander('Outputs and Insights'):
 
-        st.write('### Output Dashboards')
-        st.write("Output dashboards have been created to focus on some of the key insights gained from the model. These can broadly be categorised in 3 groups:")
-        st.write("* **Welfare** measurements focus on the impact of developments on households in various income strata.")
-        st.write("* **Climate** measures focus on climatic risks to households.")
-        st.write("* **Development** measures focus on economic measures including construction density and rental values.")
-        col1, col2, col3 = st.columns(3)
+    #     st.write('### Output Dashboards')
+    #     st.write("Output dashboards have been created to focus on some of the key insights gained from the model. These can broadly be categorised in 3 groups:")
+    #     st.write("* **Welfare** measurements focus on the impact of developments on households in various income strata.")
+    #     st.write("* **Climate** measures focus on climatic risks to households.")
+    #     st.write("* **Development** measures focus on economic measures including construction density and rental values.")
+    #     col1, col2, col3 = st.columns(3)
 
-        with col1:
-            st.write("#### Welfare")
-            st.write('⛽ Fuel')
+    #     with col1:
+    #         st.write("#### Welfare")
+    #         st.write('⛽ Fuel')
         
-        with col2:
-            st.write("#### Climate")
-            st.write('🌊 Floods')
+    #     with col2:
+    #         st.write("#### Climate")
+    #         st.write('🌊 Floods')
         
-        with col3:
-            st.write("#### Development")
-            st.write("🏘️ Housing")
+    #     with col3:
+    #         st.write("#### Development")
+    #         st.write("🏘️ Housing")
 
-    with st.expander('User Guide'):
-        st.write('user guide here')
+    # with st.expander('User Guide'):
+    #     st.write('user guide here')
 
 with dataTab:
         st.write("### Source Data")
