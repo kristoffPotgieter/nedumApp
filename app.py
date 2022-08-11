@@ -12,7 +12,7 @@ st.write('The urban simulation model presented in this dashboard is intended for
 
 @st.cache
 def load_parameters():
-    parameters = pd.read_excel('metadata/options_and_param.xlsx',sheet_name= 'parameters').set_index('parameters')
+    parameters = pd.read_csv('metadata/options_and_param.csv').set_index('parameters')
     return parameters
 
 parameters = load_parameters()
