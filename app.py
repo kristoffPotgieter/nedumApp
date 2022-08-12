@@ -20,7 +20,7 @@ parameters = load_parameters()
 
 
 # st.dataframe(parameters.astype('str'))
-helpTab,dataTab, paramTab,outputTab=st.tabs(['Help','Data','Inputs','Outputs'])
+helpTab,dataTab, paramTab,inputTab,outputTab=st.tabs(['Help','Data','Parameters & Options','Inputs','Outputs'])
 
 
 with helpTab:
@@ -79,6 +79,8 @@ with dataTab:
         st.write("### Source Data")
         st.dataframe(pd.read_csv('modelOutputs/data_list.csv'))
 
+scenarioDict={"Baseline":"142", "Alternative":"212"}
+
 with paramTab:
 
     st.write("### Parameters and Options ")
@@ -99,6 +101,27 @@ with paramTab:
 
     st.dataframe(parameters[np.logical_and(parameters.category==categoryChoice,[x in varType for x in parameters.type])].astype('str'))
     
+with inputTab:
+
+
+
+    # inputCol1, inputCol2 = st.columns(2)
+
+    # with inputCol1:
+        # scenarioSelect = st.selectbox("SCENARIO",['Baseline','Alternative'])
+        # inputScenario = scenarioDict[scenarioSelect]
+        
+    inputScenPath = "modelOutputs/outputs/input_plots/"
+    inputList= os.listdir(inputScenPath)
+
+    # with inputCol2:
+    inputFigure = st.selectbox('input',inputList)
+        
+    st.image(inputScenPath+inputFigure)
+
+
+
+
 
 with outputTab:
     st.write('### Outputs')
@@ -126,7 +149,9 @@ with outputTab:
     col3, col4 = st.columns(2)
 
     with col3:
-        scenario = st.selectbox("SCENARIO",['142','212'])
+        scenarioSelect = st.selectbox("SCENARIO",['Baseline','Alternative'],key='inputSelect')
+        scenario = scenarioDict[scenarioSelect]
+        scenarioDict={"Baseline":"142", "Alternative":"212"}
         scenPath = "modelOutputs/outputs/floods10_P11_C11_scenario"+scenario+"/plots/"
         outputList= os.listdir(scenPath)
 
